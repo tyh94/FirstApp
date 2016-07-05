@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Forest.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        Forest *forest = [[Forest alloc] init];
     }
     return 0;
 }
