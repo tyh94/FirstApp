@@ -7,11 +7,13 @@
 //
 
 #import "Animal.h"
+#import "Forest.h"
 
 @implementation Animal
 
 -(void)eat:(id)food{
-    
+    [self.stomach addObject:food];
+    [[Forest sharedInstance] deleteResident:food];
 }
 
 @end

@@ -12,7 +12,7 @@
 @implementation Predator
 
 -(NSString *)description{
-    return [super description];
+    return [NSString stringWithFormat:@"Predator with name: %@ with weight: %d and calories: %d", self.name, self.weight, self.calories];
 }
 
 - (instancetype)initWithWeight:(int)weight andName:(NSString *)name{
@@ -33,11 +33,13 @@
         if ([food respondsToSelector:@selector(isHide)]) {
             if ([food performSelector:@selector(isHide)]) {
                 self.calories +=((Herbivorous*)food).calories/2;
+                [super eat:food];
             }
         }
     } else if ([food isKindOfClass:[Predator class]]){
         if(self.weight > ((Predator*)food).weight && !((Predator*)food).isProtect){
             self.calories +=((Predator*)food).calories/2;
+            [super eat:food];
         }
     }
 }

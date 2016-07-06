@@ -10,6 +10,10 @@
 
 @implementation Grass
 
+-(NSString *)description{
+    return [NSString stringWithFormat:@"Grass with name: %@ with calories: %d", self.name, self.calories];
+}
+
 
 -(instancetype)initWithName:(NSString *)name{
     self = [super initWithName:name];

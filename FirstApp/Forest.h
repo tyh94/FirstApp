@@ -14,5 +14,6 @@
 @property NSMutableArray *forestResidents;
 
 + (Forest *) sharedInstance;
-
+- (void)simulateDay;
+- (void)deleteResident:(id)resident;
 @end

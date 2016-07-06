@@ -11,6 +11,10 @@
 
 @implementation Herbivorous
 
+-(NSString *)description{
+    return [NSString stringWithFormat:@"Herbivorous with name: %@ with calories: %d", self.name, self.calories];
+}
+
 - (instancetype)initWithName:(NSString *)name{
     self = [super initWithName:name];
     if(self){
@@ -27,6 +31,7 @@
 -(void)eat:(id)food{
     if ([food isKindOfClass:[Grass class]]) {
         self.calories +=((Grass*)food).calories;
+        [super eat:food];
     }
 }
 
